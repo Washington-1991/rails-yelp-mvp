@@ -1,0 +1,12 @@
+<h1>Want to add a new restaurant?</h1>
+<%= form_with model: @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :phone_number %>
+  <%= f.number_field :phone_number %>
+  <%= f.label :category %>
+<%= f.collection_select :category, [["chinese", "chinese"], ["italian", "italian"], ["japanese", "japanese"], ["french", "french"], ["belgian", "belgian"]], :last, :first%>
+  <%= f.submit %>
+<% end %>
